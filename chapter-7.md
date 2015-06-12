@@ -79,3 +79,23 @@ assert_defferenceは第2引数として差の数の指定ができる
 
 ## 7.5 Professional-grade deployment
 
+masterにmerge
+
+### 7.5.1 SSL in production
+
+ユーザの名前，メールアドレス，パスワード等がネットワークをそのまま流れるのは良くない  
+SSLを使って暗号化する
+
+    config.force_ssl = true (in config/environments/production.rb)
+
+### 7.5.2 Production webserver
+
+WEBrickはproductionで使うのに適していない  
+WEBrick with Pumaにする
+
+    gem 'puma',           '2.11.1'
+
+config/puma.rbに設定を書く  
+設定内容はHerokuのドキュメント参照
+
+Pumaを使うことを知らせるためにProcfileも書く
