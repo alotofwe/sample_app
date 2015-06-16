@@ -68,7 +68,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     # :address        => 'smtp.gmail.com',
-    :address        => 'mail008.lolipop.jp',
+    :address        => 'smtp.lolipop.jp',
     :port           => '587',
     :authentication => :plain,
     # :user_name      => ENV['SENDGRID_USERNAME'],
