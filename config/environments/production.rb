@@ -67,12 +67,16 @@ Rails.application.configure do
   host = 'rails-tutorial-sample-suzupy.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    # :address        => 'smtp.gmail.com',
+    :address        => 'mail008.lolipop.jp',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com',
+    # :user_name      => ENV['SENDGRID_USERNAME'],
+    # :password       => ENV['SENDGRID_PASSWORD'],
+    :user_name      => ENV['LOLIPOP_MAIL_USERNAME'],
+    :password       => ENV['LOLIPOP_MAIL_PASSWORD'],
+    # :domain         => 'heroku.com',
+    :domain         => 'alotofwe.pw',
     :enable_starttls_auto => true
   }
 
