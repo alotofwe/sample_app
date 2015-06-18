@@ -21,8 +21,8 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
       end
     end
 
-    unactivated_users = User.where(activated: false).limit(30)
-    unactivated_users.each do |user|
+    inactivate_users = User.where(activated: false).limit(30)
+    inactivate_users.each do |user|
       assert_select 'a[href=?]', user_path(user), text: user.name, count: 0
     end
 
