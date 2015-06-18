@@ -20,3 +20,6 @@
 /spring/*.pid
 
 /vendor/bundle
+
+# Ignore uploaded test images.
+/public/uploads
