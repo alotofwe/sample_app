@@ -9,9 +9,4 @@ if Rails.env.production?
     }
     config.fog_directory     =  ENV['S3_BUCKET']
   end
-  p ENV['S3_ACCESS_KEY']
-  p ENV['S3_SECRET_KEY']
-  p ENV['AWS_REGION']
-  p ENV['S3_BUCKET']
-  p CarrierWave.configure
 end

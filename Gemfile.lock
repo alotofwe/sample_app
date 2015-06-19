@@ -82,6 +82,11 @@ GEM
       fog-softlayer
       ipaddress (~> 0.5)
       nokogiri (~> 1.5, >= 1.5.11)
+    fog-aws (0.5.0)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
     fog-brightbox (0.7.1)
       fog-core (~> 1.22)
       fog-json
@@ -99,6 +104,9 @@ GEM
     fog-softlayer (0.4.6)
       fog-core
       fog-json
+    fog-xml (0.1.2)
+      fog-core
+      nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
@@ -257,7 +265,8 @@ DEPENDENCIES
   coffee-rails (= 4.1.0)
   faker (= 1.4.2)
   faker-japanese (= 0.0.1)
-  fog (= 1.23.0)
+  fog
+  fog-aws
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.4)
