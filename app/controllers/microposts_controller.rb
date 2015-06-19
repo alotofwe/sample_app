@@ -4,8 +4,6 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
-    p CarrierWave.configure
-    p @micropost
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
