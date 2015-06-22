@@ -27,11 +27,18 @@ mallory:
   activated: true
   activated_at: <%= Time.zone.now %>
 
-<% 30.times do |n| %>
+alotofwe:
+  name: Umino Reika
+  email: alotofwe@example.gov
+  password_digest: <%= User.digest('password') %>
+  activated: false
+  activated_at: nil
+
+<% 60.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('password') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
+  activated: <%= n % 2 == 0 ? true : false %>
+  activated_at: <%= n % 2 == 0 ? Time.zone.now : nil %>
 <% end %>
