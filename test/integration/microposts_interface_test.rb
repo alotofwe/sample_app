@@ -12,7 +12,9 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_select 'div.pagination'
     assert_select 'input[type=file]'
     # Invalid submission
-    post microposts_path, micropost: { content: "" }
+    assert_no_difference 'Micropost.count' do
+      post microposts_path, micropost: { content: "" }
+    end
     assert_select 'div#error_explanation'
     # Valid submission
     content = "This micropost really ties the room together"
