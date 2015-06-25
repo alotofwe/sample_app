@@ -45,6 +45,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_match "0 microposts", response.body
     other_user.microposts.create!(content: "A micropost")
     get root_path
-    assert_match "1 micropost", response.body
+    assert_match /1 micropost[^s]/, response.body
   end
 end
