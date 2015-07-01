@@ -26,4 +26,6 @@
 
 *.orig
 
+.DS_store
+
 coverage/
