@@ -66,7 +66,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # host = 'rails-tutorial-sample-suzupy.herokuapp.com'
   host = 'localhost:8080'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { :host => 'example.com', :protocol => 'https'}
   ActionMailer::Base.smtp_settings = {
     # :address        => 'smtp.gmail.com',
     :address        => 'smtp.lolipop.jp',
