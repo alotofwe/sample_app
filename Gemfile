@@ -6,8 +6,6 @@ gem 'faker',                   '1.4.2'
 gem 'faker-japanese',          '0.0.1'
 gem 'carrierwave',             '0.10.0'
 gem 'mini_magick',             '3.8.0'
-gem 'fog'
-gem 'fog-aws'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
@@ -18,9 +16,9 @@ gem 'jquery-rails',            '4.0.4'
 gem 'turbolinks',              '2.3.0'
 gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
+gem 'therubyracer'
 
 group :development, :test do
-  # gem 'sqlite3',     '1.3.9'
   gem 'mysql2',      '0.3.18'
   gem 'byebug',      '3.4.0'
   gem 'spring',      '1.1.3'
@@ -36,7 +34,12 @@ group :test do
 end
 
 group :production do
-  # gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
-  gem 'puma',           '2.11.1'
+  # gem 'puma',           '2.11.1'
+  # gem 'fog'
+  # gem 'fog-aws'
+end
+
+group :development, :production do
+  gem 'unicorn'
 end

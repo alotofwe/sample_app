@@ -2,7 +2,7 @@ default: &default
   adapter: mysql2
   pool: 5
   timeout: 5000
-  socket: /tmp/mysql.sock
+  socket: <%= ENV['MYSQL_SOCKET_PATH'] %>
 
 development:
   <<: *default
@@ -12,9 +12,10 @@ development:
 
 test:
   <<: *default
-  database: sample_test
-  username: user_test
-  password: pw_test
+  adapter: mysql2
+  database: sample_app_test
+  username: root
+  encoding: utf8
 
 production:
   <<: *default
