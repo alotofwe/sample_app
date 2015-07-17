@@ -1,3 +1,6 @@
 language: ruby
 rvm:
 - 2.2.1
+before_script:
+  - bundle exec rake db:create
+  - mysql -u root "GRANT ALL PRIVILEGES ON sample_test.* TO user_test@localhost IDENTIFIED BY 'pw_test' WITH GRANT OPTION;"
