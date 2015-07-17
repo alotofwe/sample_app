@@ -11,9 +11,10 @@ development:
   password: pw_development
 
 test:
+  <<: *default
   adapter: mysql2
   database: sample_app_test
-  username: travis
+  username: root
   encoding: utf8
 
 production:
