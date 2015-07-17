@@ -3,3 +3,4 @@ rvm:
 - 2.2.1
 before_script:
   - mysql -e 'create database sample_app_test;'
+  - bundle exec rake db:migrate
