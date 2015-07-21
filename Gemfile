@@ -19,7 +19,6 @@ gem 'sdoc',                    '0.4.0', group: :doc
 gem 'therubyracer'
 
 group :development, :test do
-  gem 'mysql2',      '0.3.18'
   gem 'byebug',      '3.4.0'
   gem 'spring',      '1.1.3'
   gem 'terminal-notifier-guard', '1.6.4'
@@ -42,4 +41,5 @@ end
 
 group :development, :production do
   gem 'unicorn'
+  gem 'mysql2',      '0.3.18'
 end
