@@ -23,7 +23,13 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  config.action_controller.asset_host = ENV['ASSET_HOST']
+  config.action_controller.asset_host = Proc.new { |source|
+    if source.starts_with?('/uploads')
+     ENV['STORAGE_HOST']
+   else
+     ENV['ASSET_HOST']
+   end
+  }
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
